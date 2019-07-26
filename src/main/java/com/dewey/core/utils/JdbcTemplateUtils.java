@@ -17,17 +17,17 @@ public class JdbcTemplateUtils {
 
     private static Map<Integer,JdbcTemplate> jdbcTemplateMap = new HashMap<>();
 
-    public static JdbcTemplate get(int i ,String url ,String userName , String password){
-        if(jdbcTemplateMap.get(i) == null){
+    public static JdbcTemplate get(int id ,String url ,String userName , String password){
+        if(jdbcTemplateMap.get(id) == null){
             synchronized (JdbcTemplateUtils.class){
-                if(jdbcTemplateMap.get(i) == null){
+                if(jdbcTemplateMap.get(id) == null){
                     JdbcTemplate jdbcTemplate = JdbcUtils.jdbcTemplate(url,userName,password);
-                    jdbcTemplateMap.put(i,jdbcTemplate);
+                    jdbcTemplateMap.put(id,jdbcTemplate);
                     return jdbcTemplate;
                 }
             }
         }
-        return jdbcTemplateMap.get(i);
+        return jdbcTemplateMap.get(id);
     }
 
     public static JdbcTemplate getById(int id){

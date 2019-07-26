@@ -64,5 +64,9 @@ public class DataConfig {
     @TableField("RELATE_CLO_NAME")
     private String relateCloName;
 
-
+    /**
+     * 列字段类型
+     */
+    @TableField("CLO_TYPE")
+    private String cloType;
 }

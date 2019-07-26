@@ -1,9 +1,12 @@
 package com.dewey.core.数据生成测试;
 
 import com.dewey.core.utils.RandomDataUtils;
+import com.dewey.core.utils.SQLUtils;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -42,5 +45,14 @@ public class DataGeneratTest {
         for (Integer i = 1; i <=5 ; i++) {
             System.out.println(i+":"+temp.get(i.toString()));
         }
+    }
+
+    @Test
+    public void getInsert(){
+        List<String> colList = new ArrayList<>();
+        colList.add("col1");
+        colList.add("col2");
+        colList.add("col3");
+        //System.out.println(SQLUtils.getInsertString("TEST_DATA_TABLE",colList));
     }
 }
